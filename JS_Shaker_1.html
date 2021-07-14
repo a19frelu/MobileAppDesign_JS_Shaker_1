@@ -4,11 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>JS Shaker 1</title>
-    <style></style>
-    <script></script>
+    <style>
+        .sideA {
+            background-color: rgb(117, 141, 250);
+        }
+        .sideB {
+            background-color: rgb(190, 190, 190);
+        }
+    </style>
+    <script src="https://raw.githack.com/HGustavs/Shaker.js/master/shaker.js"></script>
+    <script>
+
+        var stepCounter = 0;
+        var element = document.getElementById("steps");
+
+        shaker.on("step", function (o) {
+           stepCounter ++;
+           document.getElementById("stepDiv").innerHTML = stepCounter;
+        });
+
+        if (stepCounter <= 25) {
+            document.getElementById("stepDiv").style.backgroundColor = sideB;
+        }
+
+        // function step() {
+        //     document.getElementById("printout").innerHTML += "STEP detected<br>";
+ 
+        //     var element = document.getElementById("stepDiv");
+        //     if (element.className == "sideA") {
+        //         element.className = "sideB";
+        //     } else {
+        //         element.className = "sideA";
+        //     }
+        // }
+
+    </script>
+    
 </head>
 <body>
-    
+    <div id="stepDiv" class="sideA">
+        <h1>Steps taken:</h1>
+    </div>
 </body>
 </html>
