@@ -12,48 +12,36 @@
             height: 100%;
             background-color: rgb(117, 141, 250);
         }
+        #stepDiv{
+            margin: auto;
+        }
 
-        .sideA {
-            height: 100%;
-            font-size: 100px;
-        }
-        .sideB {
-            background-color: rgb(190, 190, 190);
-        }
     </style>
     <script src="https://raw.githack.com/HGustavs/Shaker.js/master/shaker.js"></script>
     <script>
 
         var stepCounter = 0;
-        var element = document.getElementById("steps");
 
         shaker.on("step", function (o) {
-           stepCounter ++;
-           document.getElementById("stepDiv").innerHTML = stepCounter;
+            step();
         });
 
-        if (stepCounter >= 5) {
-            body.style.backgroundColor = "#cccccc";
+        function step(){
+            stepCounter++;
+            document.getElementById("counter").innerHTML = stepCounter;
+            if(stepCounter >= 25) {
+                document.getElementById("counter").style.display = "none";
+                document.body.style.backgroundColor = "purple";
+            }
         }
-
-        // function step() {
-        //     document.getElementById("printout").innerHTML += "STEP detected<br>";
- 
-        //     var element = document.getElementById("stepDiv");
-        //     if (element.className == "sideA") {
-        //         element.className = "sideB";
-        //     } else {
-        //         element.className = "sideA";
-        //     }
-        // }
 
     </script>
     
 </head>
 <body>
     <div class="container">
-        <div id="stepDiv" class="sideA">
-            <h1></h1>
+        <div id="stepDiv">
+            <h1 id="counter">0</h1>
         </div>
     </div>
 </body>
