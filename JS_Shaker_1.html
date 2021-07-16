@@ -7,8 +7,15 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>JS Shaker 1</title>
     <style>
-        .sideA {
+
+        body {
+            height: 100%;
             background-color: rgb(117, 141, 250);
+        }
+
+        .sideA {
+            height: 100%;
+            font-size: 100px;
         }
         .sideB {
             background-color: rgb(190, 190, 190);
@@ -25,8 +32,8 @@
            document.getElementById("stepDiv").innerHTML = stepCounter;
         });
 
-        if (stepCounter <= 25) {
-            document.getElementById("stepDiv").style.backgroundColor = sideB;
+        if (stepCounter >= 5) {
+            body.style.backgroundColor = "#cccccc";
         }
 
         // function step() {
@@ -44,8 +51,10 @@
     
 </head>
 <body>
-    <div id="stepDiv" class="sideA">
-        <h1>Steps taken:</h1>
+    <div class="container">
+        <div id="stepDiv" class="sideA">
+            <h1></h1>
+        </div>
     </div>
 </body>
 </html>
