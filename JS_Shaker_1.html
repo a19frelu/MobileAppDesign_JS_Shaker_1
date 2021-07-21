@@ -24,6 +24,9 @@
         h1 {
             font-size: 100px;
         }
+        #message{
+            display: none;
+        }
 
     </style>
     <script src="https://raw.githack.com/HGustavs/Shaker.js/master/shaker.js"></script>
@@ -43,6 +46,7 @@
                 document.body.style.backgroundColor = "purple";
                 /* Play sound effekt */
                 document.getElementById("flipSide").play();
+                document.getElementById("message").style.display = "block";
             }
         }
 
@@ -52,7 +56,8 @@
 <body>
     <div class="container">
         <div id="stepDiv">
-            <h1 id="counter">0</h1>
+            <h1 id="message"> Yey you did it! </h1>
+            <h1 id="counter"> 0 </h1>
         </div>
     </div>
     <audio id="flipSide">
